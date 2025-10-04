@@ -1,7 +1,7 @@
 /* === About Section === */
 .about {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 0px 5% 0px; /* ✅ aligns with hero/nav spacing */
   background: transparent;
   color: #fff;
