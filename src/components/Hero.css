@@ -1,10 +1,10 @@
 .hero {
   width: 100%;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 00px 5% 60px; /* ✅ offset for fixed navbar */
+  padding: 10px 5% 60px; /* ✅ offset for fixed navbar */
   background: transparent;
   box-sizing: border-box;
 }
