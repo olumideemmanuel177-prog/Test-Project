@@ -1,0 +1,118 @@
+:root {
+  --bg-dark: #0d1116;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-hover-bg: rgba(0, 181, 226, 0.12);
+  --accent: #00B5E2;
+  --text-light: #ddd;
+  --text-white: #fff;
+}
+
+.services {
+  padding: 100px 6%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.services-header {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.services-label {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.services-title {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.services-intro {
+  font-size: 1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.4s ease, background 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.6s forwards;
+}
+
+.service-card:hover {
+  background: var(--card-hover-bg);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 32px rgba(0, 181, 226, 0.25);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-body {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--text-white);
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .services-grid {
+    gap: 20px;
+  }
+  .service-card {
+    padding: 20px;
+  }
+  .services-title {
+    font-size: 1.8rem;
+  }
+}

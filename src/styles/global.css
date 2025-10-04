@@ -1,0 +1,51 @@
+:root{
+  --bg: #07121a;
+  --text: #e9f7fb;
+  --muted: rgba(255,255,255,0.7);
+  --container-w: 1100px;
+  --header-offset: 72px; /* reserve space when navbar is fixed later */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  padding-top: var(--header-offset); /* avoids content under fixed navbar later */
+}
+
+/* simple centered container */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+/* sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(2,12,18,0.9), rgba(3,20,28,0.95));
+  color: var(--text);
+}
+
+.section.alt {
+  background: linear-gradient(180deg, rgba(3,18,22,0.95), rgba(10,26,30,0.98));
+}
+
+.section .container h1 {
+  font-size: clamp(22px, 4vw, 44px);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.section .container p {
+  max-width: 720px;
+  opacity: 0.9;
+}

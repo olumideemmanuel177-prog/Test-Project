@@ -1,0 +1,27 @@
+:root {
+  --bg-dark-1: #0a0f1f;  /* slightly lighter than pure black */
+  --bg-dark-2: #101b33;  /* elegant deep blue tone */
+  --bg-accent-1: #00b5e2; /* cyan/teal */
+  --bg-accent-2: #7b2ff7; /* purple glow */
+  --bg-accent-3: #00ffb0; /* mint/green glow */
+  --accent: #00B5E2;
+}
+
+/* Global background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+   overflow-x: hidden;
+   width: 100%;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,181,226,0.18), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(123,47,247,0.15), transparent 35%),
+    radial-gradient(circle at 50% 120%, rgba(0,255,176,0.12), transparent 40%),
+    linear-gradient(180deg, #0a0f1f 0%, #101b33 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
