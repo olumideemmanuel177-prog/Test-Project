@@ -205,6 +205,7 @@
   .scroll-indicator {
     bottom: -80px; /* bring it slightly closer for smaller screens */
     gap: 4px;
+    min-height: 100vh;
   }
 
   .scroll-indicator span {
