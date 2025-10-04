@@ -126,7 +126,7 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding-top: 100px; /* ✅ keep balanced spacing on small screens */
+    padding-top: 50px; /* ✅ keep balanced spacing on small screens */
   }
 
   .hero-title {
