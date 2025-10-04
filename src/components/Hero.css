@@ -203,8 +203,12 @@
 /* === Mobile Adjustments === */
 @media (max-width: 768px) {
   .scroll-indicator {
-    bottom: -50px; /* bring it slightly closer for smaller screens */
-    gap: 4px;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00d4ff;
+  animation: bounce 2s infinite;
     
   }
 
