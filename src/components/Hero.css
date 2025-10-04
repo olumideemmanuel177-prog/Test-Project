@@ -203,7 +203,7 @@
 /* === Mobile Adjustments === */
 @media (max-width: 768px) {
   .scroll-indicator {
-    bottom: -180px; /* bring it slightly closer for smaller screens */
+    bottom: -100px; /* bring it slightly closer for smaller screens */
     gap: 4px;
   }
 
