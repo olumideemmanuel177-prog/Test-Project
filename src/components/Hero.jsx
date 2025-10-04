@@ -21,12 +21,19 @@ function Hero() {
           <Link to="/contact" className="hero-btn">
             Get Started →
           </Link>
+
+
         </div>
 
         {/* Right side - Image */}
         <div className="hero-image">
           <img src={heroImage} alt="Hero" className="hero-img" />
         </div>
+
+          <div className="scroll-indicator">
+            <span></span>
+            <div className="arrow"></div>
+          </div>
       </div>
     </section>
   );
