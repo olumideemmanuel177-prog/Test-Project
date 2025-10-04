@@ -7,6 +7,7 @@
   padding: 10px 5% 60px; /* ✅ offset for fixed navbar */
   background: transparent;
   box-sizing: border-box;
+  position: relative; /* needed for scroll indicator positioning */
 }
 
 /* Container */
@@ -113,7 +114,7 @@
     flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
-    padding-top: 50px; 
+    padding-top: 50px;
   }
 
   .hero-text {
@@ -127,7 +128,9 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding-top: 50px; /* ✅ keep balanced spacing on small screens */
+    align-items: flex-start; /* ✅ move content upward */
+    padding-top: 80px; /* ✅ slightly lower from top */
+    padding-bottom: 100px; /* ✅ create room for scroll indicator */
   }
 
   .hero-title {
@@ -142,14 +145,29 @@
   .hero-img {
     width: 260px;
   }
+
+  .scroll-indicator {
+    bottom: 25px; /* ✅ visible and centered */
+    gap: 4px;
+  }
+
+  .scroll-indicator span {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .arrow {
+    width: 14px;
+    height: 14px;
+    border-left: 2px solid #00B5E2;
+    border-bottom: 2px solid #00B5E2;
+  }
 }
-
-
 
 /* === Scroll Indicator (Centered at bottom middle) === */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px; /* slightly above bottom edge for breathing room */
+  bottom: 30px; /* slightly above bottom edge */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -197,27 +215,12 @@
 
 /* Subtle fade-in effect */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px) translateX(-50%); }
-  to { opacity: 0.9; transform: translateY(0) translateX(-50%); }
-}
-
-/* === Mobile Adjustments === */
-@media (max-width: 768px) {
-  .scroll-indicator {
-    bottom: -10px; /* bring it slightly closer for smaller screens */
-    gap: 4px;
-    
+  from {
+    opacity: 0;
+    transform: translateY(10px) translateX(-50%);
   }
-
-  .scroll-indicator span {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-  }
-
-  .arrow {
-    width: 14px;
-    height: 14px;
-    border-left: 2px solid #00B5E2;
-    border-bottom: 2px solid #00B5E2;
+  to {
+    opacity: 0.9;
+    transform: translateY(0) translateX(-50%);
   }
 }
