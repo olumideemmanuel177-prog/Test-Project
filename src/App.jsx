@@ -24,12 +24,14 @@ function NotFound() {
 export default function App() {
   return (
     <div className="App">
+      {/* ✅ Navbar always visible */}
       <Navbar />
       <ScrollToTop />
 
-      <main>
+      {/* ✅ Add a wrapper for consistent horizontal spacing */}
+      <main className="site-wrapper">
         <Routes>
-          {/* Home Page */}
+          {/* ✅ Home page sections grouped together */}
           <Route
             path="/"
             element={
@@ -42,15 +44,16 @@ export default function App() {
             }
           />
 
-          {/* Other Pages */}
+          {/* ✅ Other pages */}
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
 
-          {/* 404 Page */}
+          {/* ✅ 404 fallback */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 
+      {/* ✅ Consistent footer placement */}
       <Footer />
     </div>
   );

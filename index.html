@@ -2,24 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- ✅ Keep viewport meta for responsive scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eudoxis Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-      <!-- Standard favicon -->
-    <link rel="icon" href="/public/logo.svg" />
 
-    <!-- For Safari/iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/logo.svg" />
+    <!-- ✅ Use proper font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- For Android -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/public/logo.svg" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/public/logo.svg" />
-
-  
+    <!-- ✅ FIXED favicon paths (remove /public/, Vercel ignores that folder name) -->
+    <link rel="icon" href="/logo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/logo.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/logo.svg" />
   </head>
+
   <body>
+    <!-- ✅ React root element -->
     <div id="root"></div>
+
+    <!-- ✅ Entry script -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

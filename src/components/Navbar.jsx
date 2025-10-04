@@ -6,10 +6,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Track active section on scroll (only on homepage)
+  // Shrink navbar when scrolling
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Highlight section on scroll
   useEffect(() => {
     if (location.pathname !== "/") return;
 
@@ -33,10 +41,9 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  // Smooth scroll or redirect to home
+  // Smooth scroll or navigate
   const handleClick = (id) => {
     if (location.pathname === "/") {
-      // Already on home → scroll
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -44,19 +51,16 @@ function Navbar() {
         setIsOpen(false);
       }
     } else {
-      // On another page → go home, then scroll
       navigate("/");
       setTimeout(() => {
         const section = document.getElementById(id);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100); // wait a bit for home to render
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
   };
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         {/* Logo */}
         <a
@@ -71,7 +75,7 @@ function Navbar() {
           <span className="logo-text">EUDOXIS</span>
         </a>
 
-        {/* Nav Links */}
+        {/* Links */}
         <nav className={`nav-links ${isOpen ? "open" : ""}`}>
           <a
             href="#home"
@@ -83,7 +87,6 @@ function Navbar() {
           >
             Home
           </a>
-
           <a
             href="#about"
             className={active === "about" ? "active" : ""}
@@ -92,10 +95,8 @@ function Navbar() {
               handleClick("about");
             }}
           >
-            About us
+            About
           </a>
-
-
           <a
             href="#services"
             className={active === "services" ? "active" : ""}
@@ -106,8 +107,6 @@ function Navbar() {
           >
             Services
           </a>
-
-
           <Link
             to="/Portfolio"
             className={active === "Portfolio" ? "active" : ""}
@@ -115,32 +114,24 @@ function Navbar() {
           >
             Portfolio
           </Link>
-
-
-          {/* Contact Us in mobile dropdown */}
-
-          <Link 
-          to="/contact" 
-          className="contactt-btn mobile-contact"
-          onClick={() => setActive("contact")}
-        >
-          Contact Us →
-        </Link>
-
+          {/* Contact (mobile) */}
+          <Link
+            to="/contact"
+            className="contactt-btn mobile-contact"
+            onClick={() => setActive("contact")}
+          >
+            Contact →
+          </Link>
         </nav>
 
-
-
-        {/* Contact Us button (desktop only) */}
-
-        <Link 
-        to="/contact" 
-        className="contactt-btn desktop-contact"
-        onClick={() => setActive("contact")}
-      >
-        Contact Us →
+        {/* Contact (desktop) */}
+        <Link
+          to="/contact"
+          className="contactt-btn desktop-contact"
+          onClick={() => setActive("contact")}
+        >
+          Contact →
         </Link>
-
 
         {/* Hamburger */}
         <div

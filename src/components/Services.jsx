@@ -16,22 +16,22 @@ function Services() {
     {
       img: softwareDev,
       title: "Software Solutions",
-      desc: "Custom software to solve business challenges and automate workflows.",
+      desc: "Custom software that solves real business challenges and automates workflows.",
     },
     {
       img: websiteMgmt,
-      title: "Site Management",
-      desc: "Maintenance, updates & security so your site runs smoothly around the clock.",
+      title: "Website Management",
+      desc: "Ongoing updates, maintenance, and security so your site runs smoothly 24/7.",
     },
     {
       img: aiSolutions,
       title: "AI & Automation",
-      desc: "Intelligent integrations & automation tailored to your workflows.",
+      desc: "We integrate intelligent automation tools to streamline your operations.",
     },
     {
       img: uiux,
       title: "UI / UX Design",
-      desc: "User-centric interfaces that prioritize clarity, delight & engagement.",
+      desc: "User-centered designs that combine clarity, beauty, and functionality.",
     },
   ];
 
@@ -40,10 +40,11 @@ function Services() {
       <div className="services-header">
         <div className="services-label">Our Services</div>
         <h2 className="services-title">
-          Complete digital services from design to AI integration
+          Complete digital solutions from <span>Design</span> to <span>AI Integration</span>
         </h2>
         <p className="services-intro">
-          From brand identity and responsive websites to software and automation — we cover it all.
+          From brand identity and responsive websites to custom software and automation — 
+          we bring ideas to life with precision and creativity.
         </p>
       </div>
 

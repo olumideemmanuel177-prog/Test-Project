@@ -1,51 +1,95 @@
-:root{
-  --bg: #07121a;
-  --text: #e9f7fb;
-  --muted: rgba(255,255,255,0.7);
-  --container-w: 1100px;
-  --header-offset: 72px; /* reserve space when navbar is fixed later */
+/* ✅ Unified + cleaned global styles
+   (merged from your index.css + global.css)
+   Everything below is organized for responsiveness and layout consistency.
+*/
+
+:root {
+  --bg-dark-1: #0a0f1f; /* dark navy base */
+  --bg-dark-2: #101b33; /* secondary deep tone */
+  --accent: #00b5e2; /* bright cyan accent */
+  --container-w: 1200px; /* main content width */
+  --header-offset: 72px; /* space for fixed navbar */
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ✅ Reset defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
+/* ✅ Body reset */
 body {
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.45;
-  padding-top: var(--header-offset); /* avoids content under fixed navbar later */
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  color: #fff;
+  background: linear-gradient(180deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 100%);
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-top: var(--header-offset);
+  width: 100%;
 }
 
-/* simple centered container */
-.container {
+/* ✅ Constrain content for large screens and center it */
+.site-wrapper {
+  width: 100%;
   max-width: var(--container-w);
-  margin: 0 auto;
-  padding: 48px 20px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
 }
 
-/* sections */
+/* ✅ Generic container class for inner sections */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* ✅ Consistent section styling */
 .section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(2,12,18,0.9), rgba(3,20,28,0.95));
-  color: var(--text);
+  /* ❌ Removed min-height: 100vh — was causing huge spacing */
+  padding-block: clamp(3rem, 8vw, 6rem);
+  background: transparent;
 }
 
+/* ✅ Alternate background (if you want to alternate sections) */
 .section.alt {
-  background: linear-gradient(180deg, rgba(3,18,22,0.95), rgba(10,26,30,0.98));
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.section .container h1 {
-  font-size: clamp(22px, 4vw, 44px);
-  margin-bottom: 12px;
+/* ✅ Typographic scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
+  line-height: 1.2;
 }
 
-.section .container p {
-  max-width: 720px;
+h1 {
+  font-size: clamp(24px, 5vw, 48px);
+}
+
+p {
+  font-size: clamp(14px, 1.2vw, 18px);
   opacity: 0.9;
+}
+
+/* ✅ Media utilities */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ✅ Small fix for sections overlapping fixed navbar */
+.section:first-child {
+  margin-top: calc(var(--header-offset) * -1);
 }

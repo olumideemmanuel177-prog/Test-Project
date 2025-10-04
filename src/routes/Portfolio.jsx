@@ -40,17 +40,21 @@ export default function Portfolio() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="portfolio">
-      <h1 className="portfolio-title">Our Work</h1>
+    <section className="portfolio" id="portfolio">
+      <div className="portfolio-header">
+        <h2 className="portfolio-title">Our <span>Projects</span></h2>
+        <p className="portfolio-sub">
+          A showcase of our digital craftsmanship — designed, developed, and delivered.
+        </p>
+      </div>
 
       <div className="portfolio-grid">
         {projects.map((p) => (
-          <div key={p.id} className="portfolio-card">
+          <div key={p.id} className="portfolio-card" onClick={() => setSelected(p)}>
             <img src={p.thumb} alt={p.title} />
             <div className="card-overlay">
               <h3>{p.title}</h3>
               <span>{p.category}</span>
-              <button onClick={() => setSelected(p)}>View</button>
             </div>
           </div>
         ))}
@@ -60,12 +64,12 @@ export default function Portfolio() {
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelected(null)}>
-              ✕
-            </button>
+            <button className="modal-close" onClick={() => setSelected(null)}>✕</button>
             <img src={selected.hero} alt={selected.title} />
-            <h2>{selected.title}</h2>
-            <p>{selected.desc}</p>
+            <div className="modal-text">
+              <h2>{selected.title}</h2>
+              <p>{selected.desc}</p>
+            </div>
           </div>
         </div>
       )}

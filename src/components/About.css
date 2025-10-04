@@ -1,136 +1,128 @@
 /* === About Section === */
 .about {
   width: 100%;
-   min-height: 100vh;
-   padding-top: 5%;
+  min-height: 100vh;
+  padding: 0px 5% 60px; /* ✅ aligns with hero/nav spacing */
   background: transparent;
   color: #fff;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+   margin-top: -40px; 
 }
 
-/* Section Label */
-.about-label {
-  border: 2px solid #00B5E2;
-  border-radius: 50px;
-  padding: 8px 28px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #00B5E2;
-  width: fit-content;
-  margin: 0 auto 40px auto;
-  text-align: center;
-  letter-spacing: 1px;
-  background: rgba(0, 181, 226, 0.05);
-}
-
-/* Container */
+/* === Container === */
 .about-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  gap: 60px;
   flex-wrap: wrap;
-  margin: 0 auto 80px auto;
   max-width: 1200px;
+  margin: 0 auto 100px;
 }
 
-/* Left: Image */
+/* === Image === */
 .about-image {
   flex: 1;
   min-width: 320px;
   display: flex;
   justify-content: center;
 }
+
 .about-img {
   width: 100%;
-  max-width: 480px;
+  max-width: 460px;
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-  transform: scale(0.95);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
   transition: transform 0.4s ease;
 }
+
 .about-img:hover {
-  transform: scale(1);
+  transform: scale(1.03);
 }
 
-/* Right: Text box */
+/* === Text === */
 .about-text-box {
   flex: 1;
   min-width: 320px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .about-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: #fff;
   position: relative;
 }
+
 .about-title::after {
   content: "";
   display: block;
-  width: 50px;
+  width: 60px;
   height: 3px;
-  background: #00B5E2;
+  background: #00b5e2;
   margin-top: 10px;
   border-radius: 2px;
 }
 
 .about-description {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 15px;
   color: #ccc;
 }
+
 .about-description .highlight {
-  color: #00B5E2;
+  color: #00b5e2;
   font-weight: 600;
 }
 
 .about-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-top: 25px;
   margin-bottom: 10px;
-  color: #00B5E2;
+  color: #00b5e2;
 }
 
 /* === Stats Row === */
 .about-stats {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: stretch;
   flex-wrap: wrap;
+  gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .stat-card {
   flex: 1;
-  min-width: 200px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
   padding: 30px 20px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, background 0.3s ease;
 }
+
 .stat-card:hover {
-  transform: translateY(-5px);
-  background: rgba(0, 181, 226, 0.08);
+  transform: translateY(-6px);
+  background: rgba(0, 181, 226, 0.1);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 700;
-  color: #00B5E2;
-  margin-bottom: 8px;
+  color: #00b5e2;
+  margin-bottom: 6px;
 }
+
 .stat-label {
   font-size: 1rem;
   color: #ccc;
@@ -139,28 +131,45 @@
 /* === Responsive === */
 @media (max-width: 992px) {
   .about-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
   }
-  .about-title {
-    font-size: 1.8rem;
+
+  .about-text-box {
+    padding: 0;
   }
+
+  .about-title {
+    font-size: 1.9rem;
+  }
+
   .about-description {
     font-size: 0.95rem;
   }
+
+  .about-img {
+    max-width: 360px;
+  }
+
   .about-stats {
     gap: 20px;
   }
 }
 
 @media (max-width: 600px) {
-  .about-title {
-    font-size: 1.5rem;
+  .about {
+    padding: 100px 6% 80px;
   }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
   .about-subtitle {
     font-size: 1.1rem;
   }
+
   .stat-number {
     font-size: 2rem;
   }
