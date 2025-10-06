@@ -34,25 +34,25 @@ function Footer() {
         <div className="footer-social">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/eudoxis-tech-335120387?trk=contact-info" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png"
                 alt="LinkedIn"
               />
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a href="https://github.com/eudoxistech-del" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/github.png"
                 alt="GitHub"
               />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://x.com/Eudoxistech" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png"
                 alt="Twitter"
               />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/eudoxistech/?hl=en" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"
                 alt="Instagram"
@@ -64,6 +64,12 @@ function Footer() {
                 alt="Facebook"
               />
             </a>
+            <a href="https://pin.it/3BHOFtqyF" target="_blank" rel="noreferrer">
+              <img
+                src="https://img.icons8.com/ios-filled/24/ffffff/pinterest--v1.png"
+                alt="Pinterest"
+              />
+              </a>
             <a href="#" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png"
