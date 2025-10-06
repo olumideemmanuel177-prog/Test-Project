@@ -29,7 +29,7 @@
   min-width: 300px;
   max-width: 550px;
   animation: fadeSlideIn 0.8s ease-out forwards;
-  text-align: left; /* normal desktop alignment */
+  text-align: left; /* ✅ desktop alignment */
 }
 
 .hero-title {
@@ -50,6 +50,7 @@
   max-width: 500px;
   line-height: 1.6;
   margin-bottom: 35px;
+  text-align: left; /* ✅ default desktop */
 }
 
 .hero-btn {
@@ -84,7 +85,7 @@
   animation: fadeInImage 1s ease-out forwards;
 }
 
-/* Scroll Indicator */
+/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   left: 50%;
@@ -110,7 +111,6 @@
   opacity: 0.8;
 }
 
-/* Arrow */
 .arrow {
   width: 18px;
   height: 18px;
@@ -148,12 +148,16 @@
     text-align: center;
   }
 
+  .hero-subtitle {
+    text-align: center;
+  }
+
   .hero-btn {
     margin: 0 auto;
   }
 }
 
-/* Phones */
+/* Mobile */
 @media (max-width: 600px) {
   .hero {
     align-items: flex-start;
@@ -189,8 +193,8 @@
   }
 }
 
-/* ✅ Force proper mobile layout even if device is in "desktop mode" */
-@media (hover: none), (pointer: coarse), (max-device-width: 768px) {
+/* ✅ Force mobile layout even when “desktop site” is enabled */
+@media screen and (max-device-width: 1000px), (hover: none) and (pointer: coarse) {
   .hero-container {
     flex-direction: column-reverse !important;
     text-align: center !important;
@@ -202,6 +206,12 @@
   .hero-text {
     text-align: center !important;
     margin: 0 auto !important;
+  }
+
+  .hero-subtitle {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 90% !important;
   }
 
   .hero-btn {
