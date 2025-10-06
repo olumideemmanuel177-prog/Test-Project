@@ -11,25 +11,25 @@
   overflow: visible;
 }
 
-/* === Main container === */
+/* Container */
 .hero-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ✅ desktop = left & right */
+  justify-content: space-between;
   gap: 60px;
   flex-wrap: wrap;
 }
 
-/* === Text side === */
+/* Text side */
 .hero-text {
   flex: 1;
   min-width: 300px;
   max-width: 550px;
   animation: fadeSlideIn 0.8s ease-out forwards;
-  text-align: left; /* ✅ desktop text left */
+  text-align: left; /* ✅ Desktop stays left-aligned */
 }
 
 .hero-title {
@@ -70,7 +70,7 @@
   transform: translateY(-3px);
 }
 
-/* === Image side === */
+/* Image side */
 .hero-image {
   flex: 1;
   display: flex;
@@ -84,7 +84,7 @@
   animation: fadeInImage 1s ease-out forwards;
 }
 
-/* === Animations === */
+/* Animations */
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
@@ -95,7 +95,7 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* === Scroll Indicator === */
+/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   left: 50%;
@@ -121,7 +121,7 @@
   opacity: 0.8;
 }
 
-/* Arrow animation */
+/* Arrow */
 .arrow {
   width: 18px;
   height: 18px;
@@ -142,7 +142,7 @@
   to { opacity: 0.9; transform: translateY(0) translateX(-50%); }
 }
 
-/* === Regular tablet/mobile layout === */
+/* Tablet and below */
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column-reverse;
@@ -163,7 +163,7 @@
   }
 }
 
-/* === Small mobile view === */
+/* Phones */
 @media (max-width: 600px) {
   .hero {
     align-items: flex-start;
@@ -199,17 +199,20 @@
   }
 }
 
-/* === Special fix: when user switches phone to "desktop site" === */
-@media (max-width: 1024px) and (orientation: landscape) {
+/* ✅ Fix for phones faking desktop mode */
+@media (hover: none) and (pointer: coarse) {
   .hero-container {
+    flex-direction: column-reverse !important;
     justify-content: center !important;
     align-items: center !important;
-    flex-direction: column-reverse !important;
     text-align: center !important;
-    gap: 40px !important;
   }
 
   .hero-text {
     text-align: center !important;
+  }
+
+  .hero-btn {
+    margin: 0 auto !important;
   }
 }
