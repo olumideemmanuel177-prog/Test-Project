@@ -1,24 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Hero.css";
 import heroImage from "../assets/hero-image.svg";
 import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function Hero() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
-
   return (
     <section className="hero" id="home">
       <div className="hero-container">
         {/* Left side - Text */}
-        <div className="hero-text" data-aos="fade-up">
+        <div className="hero-text">
           <h1 className="hero-title">
             Building the <span>Future</span> of <span>Digital Experiences</span>
           </h1>
@@ -31,18 +21,19 @@ function Hero() {
           <Link to="/contact" className="hero-btn">
             Get Started →
           </Link>
+
+
         </div>
 
         {/* Right side - Image */}
-        <div className="hero-image" data-aos="zoom-in">
+        <div className="hero-image">
           <img src={heroImage} alt="Hero" className="hero-img" />
         </div>
 
-        {/* Scroll indicator */}
-        <div className="scroll-indicator">
-          <span></span>
-          <div className="arrow"></div>
-        </div>
+          <div className="scroll-indicator">
+            <span></span>
+            <div className="arrow"></div>
+          </div>
       </div>
     </section>
   );
