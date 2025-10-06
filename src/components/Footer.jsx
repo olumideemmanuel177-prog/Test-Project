@@ -48,8 +48,8 @@ function Footer() {
             </a>
             <a href="https://x.com/Eudoxistech" target="_blank" rel="noreferrer">
               <img
-                src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png"
-                alt="Twitter"
+                src="https://img.icons8.com/ios-filled/24/ffffff/x.png"
+                alt="x"
               />
             </a>
             <a href="https://www.instagram.com/eudoxistech/?hl=en" target="_blank" rel="noreferrer">
