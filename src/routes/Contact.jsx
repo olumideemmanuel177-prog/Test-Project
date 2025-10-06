@@ -61,11 +61,11 @@ function Contact() {
         <div className="contact-info">
           <div className="info-item">
             <h4>Email</h4>
-            <p>eudoxis@gmail.com</p>
+            <p>eudoxistech@gmail.com</p>
           </div>
           <div className="info-item">
             <h4>Phone</h4>
-            <p>+123 456 7890</p>
+            <p>+234 905 9484 670</p>
           </div>
           <div className="info-item">
             <h4>Location</h4>

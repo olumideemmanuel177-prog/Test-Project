@@ -49,7 +49,7 @@ function Footer() {
             <a href="https://x.com/Eudoxistech" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/x.png"
-                alt="x"
+                alt="X"
               />
             </a>
             <a href="https://www.instagram.com/eudoxistech/?hl=en" target="_blank" rel="noreferrer">
@@ -69,8 +69,8 @@ function Footer() {
                 src="https://img.icons8.com/ios-filled/24/ffffff/pinterest--v1.png"
                 alt="Pinterest"
               />
-              </a>
-            <a href="#" target="_blank" rel="noreferrer">
+            </a>
+            <a href="https://wa.me/2349059484670" target="_blank" rel="noreferrer">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png"
                 alt="WhatsApp"
