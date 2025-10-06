@@ -11,25 +11,25 @@
   overflow: visible;
 }
 
-/* Container */
+/* === Main container === */
 .hero-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center; /* ✅ Always center horizontally */
+  justify-content: space-between; /* ✅ desktop = left & right */
   gap: 60px;
   flex-wrap: wrap;
-  text-align: center; /* ✅ Center text when layout adjusts */
 }
 
-/* Text side */
+/* === Text side === */
 .hero-text {
   flex: 1;
   min-width: 300px;
   max-width: 550px;
   animation: fadeSlideIn 0.8s ease-out forwards;
+  text-align: left; /* ✅ desktop text left */
 }
 
 .hero-title {
@@ -50,7 +50,6 @@
   max-width: 500px;
   line-height: 1.6;
   margin-bottom: 35px;
-  margin-inline: auto; /* ✅ centers text block */
 }
 
 .hero-btn {
@@ -71,7 +70,7 @@
   transform: translateY(-3px);
 }
 
-/* Image side */
+/* === Image side === */
 .hero-image {
   flex: 1;
   display: flex;
@@ -85,7 +84,7 @@
   animation: fadeInImage 1s ease-out forwards;
 }
 
-/* Animations */
+/* === Animations === */
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
@@ -96,11 +95,11 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Scroll Indicator */
+/* === Scroll Indicator === */
 .scroll-indicator {
   position: absolute;
   left: 50%;
-  bottom: calc(20vh + env(safe-area-inset-bottom, 0px)); 
+  bottom: calc(22vh + env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -122,6 +121,7 @@
   opacity: 0.8;
 }
 
+/* Arrow animation */
 .arrow {
   width: 18px;
   height: 18px;
@@ -131,7 +131,6 @@
   animation: bounce 1.5s infinite ease-in-out;
 }
 
-/* Bounce animation */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(-45deg); }
   40% { transform: translateY(6px) rotate(-45deg); }
@@ -143,40 +142,28 @@
   to { opacity: 0.9; transform: translateY(0) translateX(-50%); }
 }
 
-/* === Fix for desktop view on phone or tablet === */
-@media (max-width: 1200px) and (min-width: 768px) {
-  .hero-container {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* ✅ stack neatly */
-    text-align: center;
-    gap: 40px;
-  }
-
-  .hero-text,
-  .hero-image {
-    flex: none;
-    max-width: 100%;
-  }
-
-  .hero-img {
-    width: 350px;
-  }
-}
-
-/* === Responsive === */
+/* === Regular tablet/mobile layout === */
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
     padding-top: 50px;
   }
 
-  .hero-text { max-width: 100%; }
-  .hero-btn { margin: 0 auto; }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-btn {
+    margin: 0 auto;
+  }
 }
 
+/* === Small mobile view === */
 @media (max-width: 600px) {
   .hero {
     align-items: flex-start;
@@ -198,7 +185,7 @@
   }
 
   .scroll-indicator {
-    bottom: calc(25vh + env(safe-area-inset-bottom, 20px)); 
+    bottom: calc(25vh + env(safe-area-inset-bottom, 20px));
     gap: 4px;
   }
 
@@ -209,5 +196,20 @@
   .arrow {
     width: 14px;
     height: 14px;
+  }
+}
+
+/* === Special fix: when user switches phone to "desktop site" === */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .hero-container {
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column-reverse !important;
+    text-align: center !important;
+    gap: 40px !important;
+  }
+
+  .hero-text {
+    text-align: center !important;
   }
 }
