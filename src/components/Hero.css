@@ -18,9 +18,10 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* ✅ Always center horizontally */
   gap: 60px;
   flex-wrap: wrap;
+  text-align: center; /* ✅ Center text when layout adjusts */
 }
 
 /* Text side */
@@ -49,6 +50,7 @@
   max-width: 500px;
   line-height: 1.6;
   margin-bottom: 35px;
+  margin-inline: auto; /* ✅ centers text block */
 }
 
 .hero-btn {
@@ -141,22 +143,24 @@
   to { opacity: 0.9; transform: translateY(0) translateX(-50%); }
 }
 
-/* === 🔧 Fix for Desktop View on Mobile (alignment issue) === */
+/* === Fix for desktop view on phone or tablet === */
 @media (max-width: 1200px) and (min-width: 768px) {
   .hero-container {
     justify-content: center;
+    align-items: center;
+    flex-direction: column; /* ✅ stack neatly */
+    text-align: center;
     gap: 40px;
   }
 
-  .hero-text, .hero-image {
+  .hero-text,
+  .hero-image {
     flex: none;
-    max-width: 45%;
-    text-align: left;
+    max-width: 100%;
   }
 
   .hero-img {
-    width: 100%;
-    max-width: 420px;
+    width: 350px;
   }
 }
 
